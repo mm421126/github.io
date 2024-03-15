@@ -1,0 +1,82 @@
+// font size
+
+.font-1 {
+  font-size: 3rem !important;
+}
+
+.font-2 {
+  font-size: 2.5rem !important;
+}
+
+.font-3 {
+  font-size: 2rem !important;
+}
+
+.font-4 {
+  font-size: 1.5rem !important;
+}
+
+.font-5 {
+  font-size: 1.25rem !important;
+}
+
+.font-6 {
+  font-size: 1rem !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+// text color
+@each $color, $value in $colors {
+  .text-#{$color} {
+    color: $value;
+  }
+}
+
+// transform
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+// weight and italics
+.font-bold {
+  font-weight: 700 !important;
+}
+
+.font-normal {
+  font-weight: 400 !important;
+}
+
+.font-light {
+  font-weight: 300 !important;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+// truncate
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

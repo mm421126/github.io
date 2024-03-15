@@ -1,0 +1,32 @@
+.link-items {
+  background: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  .link-title {
+    font-size: 14px;
+    font-weight: bolder;
+    color: #505b67;
+    margin-right: 20px;
+
+    @include media-until(sm) {
+      display: block;
+    }
+  }
+
+  .link-item {
+    display: inline-block;
+
+    a {
+      padding: 0 20px 0 0;
+      color: #B6BABF;
+      font-size: 14px;
+
+      &:hover {
+        color: #505b67;
+      }
+    }
+  }
+}

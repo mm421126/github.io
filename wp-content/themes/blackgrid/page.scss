@@ -1,0 +1,79 @@
+.about {
+  border-radius: 6px;
+  background: #fff;
+  margin-top: $grid-gutter / 2;
+  padding: 40px;
+  font-size: 14px;
+
+  @include media-until(sm) {
+    padding: $grid-gutter;
+  }
+
+  .about-title {
+    padding-left: 13px;
+    border-left: 5px solid #505b67;
+    color: #131821;
+    margin-bottom: 40px;
+  }
+
+  .about-content {
+    color: #505B67;
+
+    a {
+      color: #505B67;
+    }
+  }
+}
+.page-content {
+  font-size: 14px;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 20px 0;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  ul, ol {
+    padding-left: 20px;
+    margin-bottom: 20px;
+
+    li {
+      margin: 10px 0;
+    }
+  }
+
+  ul {
+    list-style: inherit;
+  }
+
+  button, .btn {
+    border-radius: 100px;
+    min-width: 130px;
+    height: 38px;
+  }
+
+  .wp-block-button {
+    a {
+      min-width: 130px;
+      height: 38px;
+      color: #fff;
+      font-size: 14px;
+      line-height: 38px;
+      padding: 0;
+
+      &.has-background {
+        color: #fff;
+      }
+    }
+  }
+}

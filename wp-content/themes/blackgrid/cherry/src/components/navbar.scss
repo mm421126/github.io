@@ -1,0 +1,244 @@
+// variables
+$navbar-item-hover-color: $primary !default;
+$navbar-item-active-color: $primary !default;
+
+$navbar-burger-span-transition-duration: 386ms !default;
+
+.navbar {
+  display: flex;
+  background-color: #fff;
+
+  & > .container {
+    display: flex;
+    padding: 0 !important;
+  }
+}
+
+%dropdown-active {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.navbar-dropdown {
+  position: relative;
+
+  &.navbar-dropdown-hover {
+    &:hover {
+      & > .navbar-dropdown-menu {
+        @extend %dropdown-active;
+      }
+    }
+  }
+
+  &.active {
+    & > .navbar-dropdown-menu {
+      @extend %dropdown-active;
+    }
+  }
+
+  &.navbar-item {
+    @include media-until(md) {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+    }
+  }
+
+  .navbar-dropdown-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    background-color: #fff;
+    left: 0;
+    min-width: 12rem;
+    top: 100%;
+    transform: translateY(-5px);
+    transition: all .3s;
+    z-index: 30;
+    border-radius: 4px;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    padding: .5rem 0;
+
+    @include media-until(md) {
+      position: static;
+      box-shadow: none;
+      margin-top: 0;
+      padding: 0;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .navbar-item {
+      font-size: .9rem;
+      color: #6c757d;
+    }
+  }
+
+  .navbar-dropdown-toggle {
+    position: relative;
+    padding-right: 1rem;
+    display: block;
+    width: 100%;
+    @include media-until(md) {
+      padding: .5rem .75rem;
+    }
+
+    &:after {
+      border: 3px solid #3273dc;
+      border-radius: 2px;
+      border-right: 0;
+      border-top: 0;
+      content: " ";
+      display: block;
+      width: .5em;
+      height: .5em;
+      margin-top: -.3em;
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-transform-origin: center;
+      transform-origin: center;
+
+      @include media-until(md) {
+        right: 1rem;
+      }
+    }
+  }
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+// responsive
+.navbar > .container,
+.navbar-menu .navbar-start, .navbar-menu .navbar-end,
+.navbar-burger {
+  @include media-until(md) {
+    display: block !important;
+  }
+}
+
+.navbar-menu {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 0;
+
+  @include media-until(md) {
+    padding: .5rem 0;
+    display: none;
+  }
+
+  &.active {
+    display: block;
+  }
+}
+
+.navbar-start, .navbar-end {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-end {
+  margin-left: auto;
+}
+
+.navbar-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: .5rem .75rem;
+  line-height: 1.5;
+  color: #4a4a4a;
+
+  &.active {
+    color: $navbar-item-active-color;
+  }
+
+  &:hover {
+    color: $navbar-item-hover-color;
+  }
+}
+
+.navbar-item .icon {
+  margin-right: .35em;
+}
+
+// fixed navbar
+.navbar-top, .navbar-bottom {
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 30;
+}
+
+.navbar-top {
+  top: 0;
+}
+
+.navbar-bottom {
+  bottom: 0;
+}
+
+.has-navbar-bottom {
+  padding-bottom: 4.25rem;
+}
+
+.has-navbar-top {
+  padding-top: 4.25rem;
+}
+
+.navbar-burger {
+  display: none;
+  color: #4a4a4a;
+  cursor: pointer;
+  height: 3.25rem;
+  position: relative;
+  width: 3.25rem;
+  margin-left: auto;
+
+  &.active span {
+    &:nth-child(1) {
+      transform: translateY(5px) rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:nth-child(3) {
+      transform: translateY(-5px) rotate(-45deg);
+    }
+  }
+
+  span {
+    background-color: currentColor;
+    display: block;
+    height: 1px;
+    left: calc(50% - 8px);
+    position: absolute;
+    transform-origin: center;
+    transition-duration: $navbar-burger-span-transition-duration;
+    transition-property: background-color, opacity, transform;
+    transition-timing-function: ease-out;
+    width: 16px;
+
+    &:nth-child(1) {
+      top: calc(50% - 6px);
+    }
+
+    &:nth-child(2) {
+      top: calc(50% - 1px);
+    }
+
+    &:nth-child(3) {
+      top: calc(50% + 4px);
+    }
+  }
+}

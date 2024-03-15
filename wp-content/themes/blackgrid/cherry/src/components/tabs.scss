@@ -1,0 +1,39 @@
+.tabs {
+  align-items: stretch;
+  display: flex;
+  font-size: 1rem;
+  justify-content: space-between;
+  overflow: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+    flex-shrink: 0;
+    border-bottom: 1px solid #d8d8d8;
+  }
+
+  .tab-item {
+    margin-bottom: -1px;
+    padding: .5em 1em;
+    vertical-align: top;
+    cursor: pointer;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #d8d8d8;
+
+    &.active, &:hover {
+      color: #3273dc;
+      border-bottom-color: #3273dc;
+    }
+  }
+}
+
+.tabs-center {
+  ul {
+    justify-content: center;
+  }
+}

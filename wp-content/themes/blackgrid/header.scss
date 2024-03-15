@@ -1,0 +1,133 @@
+$navbar-height: 70px;
+$navbar-mobile-height: 50px;
+
+.navbar {
+  .switchery {
+    margin-left: auto;
+  }
+}
+
+.navbar-item-notice {
+  cursor: default;
+  padding-right: 16px;
+  padding-left: 16px;
+  @include media-until(md) {
+    display: none;
+  }
+}
+
+.sidenav {
+  .tag {
+    color: #fff;
+    margin-left: auto;
+  }
+
+  .menu-item {
+    display: flex;
+  }
+}
+
+.navbar-end {
+  color: #505b67;
+
+  i {
+    color: #505b67;
+  }
+
+  @include media-until(sm) {
+    margin-left: 0;
+  }
+}
+
+.wechat-qrcode {
+  width: 140px;
+  height: auto;
+}
+
+.wechat-qrcode-menu {
+  z-index: 1000000 !important;
+  padding: 5px !important;
+}
+
+.navbar {
+  justify-content: space-between;
+  height: $navbar-height;
+  background: #FCFCFC;
+  z-index: 100000 !important;
+
+  @include media-until(sm) {
+    height: $navbar-mobile-height;
+    position: fixed;
+    z-index: 90;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .navbar-brand {
+    display: none;
+
+    @include media-until(sm) {
+      display: block;
+    }
+  }
+
+  .navbar-burger {
+    margin-left: 0;
+    visibility: hidden;
+
+    &.active {
+      color: #fff;
+    }
+  }
+}
+
+.navbar-item-logo {
+  margin-left: 36px;
+  display: none;
+
+  @include media-until(sm) {
+    display: flex;
+  }
+}
+
+.mobile-navbar-burger {
+  display: none !important;
+
+  @include media-until(sm) {
+    display: block !important;
+    position: fixed !important;
+    z-index: 10000000;
+    top: 0;
+    left: 0;
+  }
+}
+
+.navbar-logo {
+  height: 36px;
+
+  img {
+    width: auto !important;
+  }
+}
+
+.navbar-end {
+  .navbar-item {
+    background: #fff;
+    box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include media-until(sm) {
+      box-shadow: none;
+      background: none;
+      padding: 0 !important;
+    }
+  }
+
+  @include media-until(sm) {
+    margin-right: 10px;
+  }
+}

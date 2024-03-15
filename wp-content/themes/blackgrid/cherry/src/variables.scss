@@ -1,0 +1,41 @@
+$primary: #007bff !default;
+$success: #28a745 !default;
+$info: #00d1b2 !default;
+$warning: #ffc107 !default;
+$danger: #dc3545 !default;
+$white: #ffffff !default;
+$gray: #6c757d !default;
+$black: #000000 !default;
+
+$colors: () !default;
+$colors: map-merge(
+  (
+    "primary":    $primary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "white":      $white,
+    "gray":       $gray,
+    "black":      $black
+  ),
+  $colors
+);
+
+// grid system
+$columns: 12 !default;
+$gap: 64px !default;
+$breakpoints: () !default;
+$breakpoints: map-merge(
+  (
+    xs: 0,
+    sm: 604px,
+    md: 784px,
+    lg: 1024px,
+    xl: 1204px
+  ),
+  $breakpoints
+);
+
+// global
+$font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;

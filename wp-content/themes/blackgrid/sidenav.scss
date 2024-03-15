@@ -1,0 +1,139 @@
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  width: $sidebar-width;
+  background: #131821;
+  position: fixed;
+  z-index: 10000000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 40px 0 60px;
+  transition: transform 430ms cubic-bezier(0.3, 0, 0, 1);
+  overflow-y: scroll;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
+
+  @include media-until(sm) {
+    transform: translateX(-$sidebar-width);
+  }
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  .icon {
+    margin-right: 16px;
+  }
+
+  .menu {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-collapse .menu-list.active {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+  }
+
+  .menu-list {
+    transition: height 350ms ease, opacity 650ms ease-in-out, visibility 650ms ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    display: block !important;
+  }
+
+  .menu-collapse-icon {
+    margin-right: 0 !important;
+  }
+
+  .menu-button {
+    margin-top: auto;
+    border-bottom: none;
+
+    .btn {
+      width: 130px;
+      height: 38px;
+      font-size: 12px;
+      border-radius: 100px;
+      justify-content: center;
+      background: transparent;
+      color: #505b67;
+      border-color: #1e2631;
+      transition: all .4s ease;
+
+      i {
+        font-size: 16px;
+        margin-right: 10px !important;
+      }
+
+      &:hover {
+        border-color: $primary;
+        background-color: $primary;
+        color: #fff;
+      }
+    }
+
+    .menu-item {
+      justify-content: center;
+    }
+
+    i {
+      margin-right: 5px !important;
+      font-size: 16px;
+    }
+  }
+}
+
+.logo {
+  margin-bottom: 10px;
+
+  img {
+    margin: 0 auto;
+    height: 48px;
+    width: auto;
+  }
+}
+
+.menu-header,
+.menu-item,
+.dropdown-item,
+.section-title {
+  display: flex !important;
+  align-items: center;
+}
+
+.menu-header {
+  font-size: 14px;
+}
+
+.menu-list {
+  .icon {
+    margin-right: 5px !important;
+  }
+}
+
+.sidenav-desc {
+  text-align: center;
+  font-size: 14px;
+  color: #505b67;
+  margin-bottom: 30px;
+}
+
+.menu-group {
+  border-bottom: 1px solid #1e2631;
+  padding: 0 30px;
+}
+
+.menu-list {
+  .menu-item {
+    padding: 9px 0 10px;
+  }
+}

@@ -1,0 +1,15 @@
+// mixins
+
+@mixin media-until($breakpoint) {
+  $width: map-get($breakpoints, $breakpoint);
+  @media screen and (max-width: $width - 1px) {
+    @content;
+  }
+}
+
+@mixin media($breakpoint) {
+  $width: map-get($breakpoints, $breakpoint);
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}

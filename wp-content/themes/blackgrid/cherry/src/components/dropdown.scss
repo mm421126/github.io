@@ -1,0 +1,92 @@
+// variables
+$dropdown-menu-background-color: #fff !default;
+$dropdown-menu-shadow: 0 2px 3px rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .1) !default;
+$dropdown-menu-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+$dropdown-item-color: $gray !default;
+$dropdown-item-padding: .4rem 1rem !default;
+$dropdown-item-hover-background-color: #f6f6f6 !default;
+$dropdown-item-active-color: #fff !default;
+$dropdown-item-active-background-color: #3273dc !default;
+$dropdown-divider-background-color: #dbdbdb !default;
+$dropdown-menu-min-width: 8rem !default;
+
+%dropdown-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-6px);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-flex;
+
+  &.active {
+    .dropdown-menu {
+      @extend %dropdown-active;
+    }
+  }
+
+  .dropdown-menu {
+    visibility: hidden;
+    opacity: 0;
+    left: 0;
+    min-width: $dropdown-menu-min-width;
+    position: absolute;
+    top: 100%;
+    z-index: 30;
+    background-color: $dropdown-menu-background-color;
+    border-radius: 6px;
+    box-shadow: $dropdown-menu-shadow;
+    padding: .5rem 0;
+    transition: all .3s ease;
+    transform: translateY(6px);
+
+    .dropdown-item {
+      display: block;
+      padding: $dropdown-item-padding;
+      font-size: .9rem;
+      color: $dropdown-item-color;
+      cursor: pointer;
+      white-space: nowrap;
+
+      &:hover {
+        background-color: $dropdown-item-hover-background-color;
+      }
+
+      &.active {
+        background-color: $dropdown-item-active-background-color;
+        color: $dropdown-item-active-color;
+      }
+    }
+
+    .dropdown-divider {
+      background-color: $dropdown-divider-background-color;
+      border: none;
+      display: block;
+      height: 1px;
+      margin: .5rem 0;
+    }
+  }
+}
+
+.dropdown-right {
+  .dropdown-menu {
+    right: 0;
+    left: auto;
+  }
+}
+
+.dropdown-up {
+  .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+  }
+}
+
+.dropdown.dropdown-hover {
+  &:hover {
+    & > .dropdown-menu {
+      @extend %dropdown-active;
+    }
+  }
+}

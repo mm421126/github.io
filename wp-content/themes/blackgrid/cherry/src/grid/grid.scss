@@ -1,0 +1,77 @@
+$grid-gutter: 30px !default;
+
+.container-fluid {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: ($grid-gutter / 2);
+  padding-right: ($grid-gutter / 2);
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: ($grid-gutter / 2);
+  padding-right: ($grid-gutter / 2);
+
+  @each $breakpoint, $width in $breakpoints {
+    @if $breakpoint == "xs" {
+      @include media-until(xs);
+    } @else {
+      @include media($breakpoint) {
+        max-width: $width - $gap;
+      }
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 100%;
+  margin-left: ($grid-gutter / -2);
+  margin-right: ($grid-gutter / -2);
+
+  & > [class^="col-"] {
+    width: 100%;
+    padding: 0 ($grid-gutter / 2);
+    position: relative;
+  }
+}
+
+.col {
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: 0 ($grid-gutter / 2);
+}
+
+@for $i from 1 through $columns {
+  .col-#{$i} {
+    flex: 0 0 percentage($i / $columns);
+    max-width: percentage($i / $columns);
+  }
+}
+
+@each $breakpoint, $width in $breakpoints {
+  @if $breakpoint != "xs" {
+    @for $i from 1 through $columns {
+      .col-#{$breakpoint}-#{$i} {
+        @include media($breakpoint) {
+          flex: 0 0 percentage($i / $columns);
+          max-width: percentage($i / $columns);
+        }
+      }
+    }
+  }
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

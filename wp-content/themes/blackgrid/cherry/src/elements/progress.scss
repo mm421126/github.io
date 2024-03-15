@@ -1,0 +1,61 @@
+.progress {
+  display: block;
+  width: 100%;
+  -webkit-appearance: none;
+  border: none;
+  border-radius: 50rem;
+  height: 1rem;
+  padding: 0;
+  overflow: hidden;
+
+  &::-webkit-progress-bar {
+    background-color: #dbdbdb;
+  }
+
+  &::-webkit-progress-value {
+    background-color: #4a4a4a;
+  }
+
+  &::-moz-progress-bar {
+    background-color: #4a4a4a;
+  }
+
+  &::-ms-fill {
+    background-color: #4a4a4a;
+    border: none;
+  }
+}
+
+@each $color, $value in $colors {
+  .progress-#{$color} {
+    &::-webkit-progress-value {
+      background-color: $value;
+    }
+
+    &::-moz-progress-bar {
+      background-color: $value;
+    }
+
+    &::-ms-fill {
+      background-color: $value;
+    }
+  }
+}
+
+.progress-sm {
+  height: .75rem;
+}
+
+.progress-lg {
+  height: 1.25rem;
+}
+
+@keyframes moveIndeterminate {
+  from {
+    background-position: 200% 0;
+  }
+
+  to {
+    background-position: -200% 0;
+  }
+}

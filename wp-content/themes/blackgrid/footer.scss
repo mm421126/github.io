@@ -1,0 +1,66 @@
+$footer-color: #505B67;
+
+.footer {
+  font-size: 12px;
+  padding: 20px 0;
+  color: $footer-color;
+  margin-top: 30px;
+
+  .copyright {
+    margin-right: 10px;
+  }
+
+  .site-record {
+    color: $footer-color;
+    margin-left: 10px;
+  }
+}
+
+.fix-tools {
+  position: fixed;
+  right: 20px;
+  bottom: 40px;
+  color: #B6BABF;
+  z-index: 1000002;
+
+  .submit, .fighting {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    transition: all .3s ease;
+    cursor: pointer;
+  }
+
+  .fighting {
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s ease;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.submit-wrap {
+  display: block;
+  text-align: center;
+  color: #B6BABF;
+
+  &:hover .submit {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+    transform: translateY(-6px);
+  }
+
+  .submit-desc {
+    font-size: 12px;
+    @include media-until(sm) {
+      display: none;
+    }
+  }
+}

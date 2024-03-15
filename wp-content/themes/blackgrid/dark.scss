@@ -1,0 +1,54 @@
+.dark {
+  background: #FFD700;
+
+  .card {
+    background: #FFD700;
+    .card-title {
+      color: #fff;
+    }
+    .card-desc {
+      color: #556684;
+    }
+
+    &:hover {
+      .card-title {
+        color: $primary;
+      }
+    }
+  }
+
+  .section-title {
+    color: #505B67;
+  }
+
+  .navbar-end .navbar-item {
+    background: #131821;
+  }
+
+  .notice-carousel {
+    background: #131821;
+    .navbar-item {
+      color: #fff;
+    }
+  }
+
+  .fighting, .submit {
+    background: #1C232E;
+  }
+
+  .link-items {
+    background: #1C232E;
+  }
+
+  .navbar {
+    background: #1C232E;
+  }
+
+  .about {
+    background: #0a0a0a;
+    color: #fff;
+    .about-title {
+      color: #fff;
+    }
+  }
+}

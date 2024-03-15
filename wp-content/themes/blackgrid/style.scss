@@ -1,0 +1,162 @@
+/*!
+Theme Name: BlackGrid-1.0
+Theme URI: http://chuangzaoshi.com/
+Author: 创造狮
+Author URI: http://chuangzaoshi.com
+Description: 产品自媒体，为极客、创意工作者而设计！
+Version: 1.0
+License: GNU General Public License v2.0
+License URI: http://www.chuangzaoshi.com/
+ */
+@import "variables";
+@import "cherry/src/cherry";
+@import "link";
+@import "ad";
+@import "navigation";
+@import "notice";
+@import "sidenav";
+@import "card";
+@import "header";
+@import "footer";
+@import "page";
+@import "dark";
+
+body {
+  background: #f6f6f6;
+}
+
+.main {
+  padding-left: $sidebar-width;
+  @include media-until(sm) {
+    padding-left: 0;
+    padding-top: 50px;
+  }
+}
+
+.app-container {
+  padding: 0 50px;
+
+  @include media-until(sm) {
+    padding: 0 0;
+  }
+
+  .navbar-end {
+    margin-right: $grid-gutter;
+  }
+}
+
+.content {
+  margin-top: 30px;
+  flex-grow: 1;
+  min-height: calc(100vh - 150px);
+  padding: 0 66px;
+
+  @include media-until(sm) {
+    padding: 0 $grid-gutter;
+  }
+}
+
+.row-content {
+  min-height: calc(100vh - 180px);
+}
+
+.icon {
+  margin-right: .25em;
+}
+
+.section-title {
+  margin-bottom: $grid-gutter;
+  color: #505b67;
+  font-size: 18px;
+
+  .icon {
+    font-size: 18px;
+  }
+
+  &.inactive {
+    margin-bottom: 55px;
+  }
+}
+
+.icon-large {
+  font-size: 24px;
+  @include media-until(sm) {
+    font-size: 16px;
+  }
+}
+
+$placeholder-font-size: 13px;
+$placeholder-color: #a0a0a0;
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: $placeholder-font-size;
+  color: $placeholder-color;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+  font-size: $placeholder-font-size;
+  color: $placeholder-color;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+  font-size: $placeholder-font-size;
+  color: $placeholder-color;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  font-size: $placeholder-font-size;
+  color: $placeholder-color;
+}
+
+%hide-scrollbar {
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+html {
+  @extend %hide-scrollbar;
+}
+
+.modal {
+  padding: 0 $grid-gutter / 2;
+}
+
+input:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s;
+  //-webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.tooltip {
+  &:after {
+    max-height: 45px;
+    overflow: hidden;
+  }
+}
+
+.colorful-card {
+  padding: 10px 10px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all 0.3s ease;
+
+  @include media(md) {
+    padding: 20px 10px;
+  }
+
+  &:hover {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+    transform: translateY(-6px);
+  }
+
+  i {
+    font-size: 24px;
+  }
+}

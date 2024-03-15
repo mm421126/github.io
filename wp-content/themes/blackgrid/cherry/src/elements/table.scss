@@ -1,0 +1,36 @@
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  background-color: transparent;
+  border-collapse: collapse;
+
+  & th, & td {
+    padding: .75rem;
+    border-top: 1px solid #dee2e6;
+  }
+}
+.table-bordered {
+  th, td {
+    border: 1px solid #dee2e6;
+  }
+}
+
+.table-striped {
+  tbody tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+}
+
+
+.table-hover {
+  tbody tr:hover {
+    background-color: #fafafa;
+  }
+}
+
+.table-full {
+  width: 100%;
+}
